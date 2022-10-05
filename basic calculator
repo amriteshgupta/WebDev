@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css/" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+      }
+      .wrapper {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(13, 180, 213);
+        transition: 0.8s all;
+      }
+      .container {
+        width: 300px;
+      }
+      .result {
+        width: 59.1%;
+      }
+      #clear {
+        background-color: rgb(227, 83, 83);
+        color: white;
+      }
+      #clear:hover {
+        background-color: rgb(255, 103, 103);
+      }
+      input {
+        padding: 25px;
+        width: 70px;
+        color: #575757;
+        font-size: 1em;
+        background-color: #fff;
+        outline: none;
+        border: none;
+        margin-bottom: 3px;
+        border-radius: 4px;
+      }
+      input[type="button"]:hover {
+        background-color: #d6d5d5;
+        cursor: pointer;
+      }
+      input[type="text"] {
+        width: 168px;
+      }
+    </style>
+
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <!-- row 1 -->
+        <div>
+          <input
+            type="text"
+            class="result"
+            id="result"
+            value=""
+            placeholder="Result"
+          />
+          <input type="button" value="C" onclick="clearScreen()" id="clear" />
+        </div>
+        <!-- row 2 -->
+        <div>
+          <input type="button" value="1" id="one" onclick="showOnScreen(1)" />
+          <input type="button" value="2" id="two" onclick="showOnScreen(2)" />
+          <input type="button" value="3" id="three" onclick="showOnScreen(3)" />
+          <input type="button" value="+" id="+" onclick="showOnScreen('+')" />
+        </div>
+        <!-- row 3 -->
+        <div>
+          <input type="button" value="4" id="four" onclick="showOnScreen(4)" />
+          <input type="button" value="5" id="five" onclick="showOnScreen(5)" />
+          <input type="button" value="6" id="six" onclick="showOnScreen(6)" />
+          <input type="button" value="-" id="-" onclick="showOnScreen('-')" />
+        </div>
+        <!-- row 4 -->
+        <div>
+          <input type="button" value="7" id="four" onclick="showOnScreen(7)" />
+          <input type="button" value="8" id="five" onclick="showOnScreen(8)" />
+          <input type="button" value="9" id="six" onclick="showOnScreen(9)" />
+          <input type="button" value="x" id="-" onclick="showOnScreen('*')" />
+        </div>
+        <!-- row 5 -->
+        <div>
+          <input
+            type="button"
+            value="/"
+            id="four"
+            onclick="showOnScreen('/')"
+          />
+          <input type="button" value="0" id="five" onclick="showOnScreen(0)" />
+          <input type="button" value="." id="six" onclick="showOnScreen('.')" />
+          <input
+            type="button"
+            value="="
+            id="equals"
+            onclick="showOnScreen('=')"
+          />
+        </div>
+        <!-- end of container -->
+      </div>
+      <!-- end of wrapper -->
+    </div>
+
+    <!-- Adding script -->
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+//  reference elements from the DOM
+var clear = document.getElementById("clear");
+var result = document.getElementById("result");
+var evaluate = document.getElementById("equals");
+//  clear output
+clear.addEventListener("click", clearScreen);
+function clearScreen() {
+  result.value = "";
+}
+
+//  Show clicked values on screen
+function showOnScreen(value) {
+  if (value !== "=") result.value += value;
+}
+
+//  evaluate
+evaluate.addEventListener("click", evaluateExpression);
+
+function evaluateExpression() {
+  var expression = result.value;
+  var answer = eval(expression);
+
+  result.value = answer;
+}
+
+/*  This styling applies to all the elements */
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+div {
+  background-color: blue;
+  color: red;
+}
