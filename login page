@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Form</title>
+</head>
+
+<body>
+    <form id="form">
+        <h1>Please Contact me</h1>
+        <div>
+            <label for="name">Name</label></br>
+            <input id="name" name="name">
+        </div>
+        <div>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message"></textarea>
+        </div>
+        <div id="buttons-row">
+            <div class="buttons">
+                <button type="submit" id="send">Send</button>
+            </div>
+            <div class="buttons">
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+    </form>
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+let sendButton = document.getElementById('send');
+let resetButton = document.getElementById('reset');
+let form = document.getElementById('form');
+
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+})
+
+resetButton.addEventListener('click', function () {
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let message = document.getElementById('message');
+
+    name.value = '';
+    email.value = '';
+    message.value = '';
+})
+
+sendButton.addEventListener('click', function (e) {
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let message = document.getElementById('message');
+
+    name = name.value;
+    localStorage.setItem('name', name);
+
+    email = email.value;
+    localStorage.setItem('email', email);
+
+    message = message.value;
+    localStorage.setItem('message', message);
+
+})
+
+form {
+    background-color: black;
+    width: 500px;
+    border-radius: 25px;
+    height: 400px;
+    padding: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 50px auto 50px;
+
+}
+
+form h1 {
+    color: white;
+    text-align: center;
+    font-size: 22px;
+}
+
+label {
+    color: rgb(43, 134, 209);
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-top: 15px;
+    display: inline-block;
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+    width: 450px;
+    height: 30px;
+    padding-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+    height: 50px;
+}
+
+#buttons-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    flex-grow: 1;
+    width: 125px;
+    margin: 25px;
+    border: none;
+    border-radius: 15px;
+    height: 35px;
+    font-size: 20px;
+}
+
+button#send {
+    background-color: rgb(211, 59, 59);
+    color: white;
+}
+
+button#reset {
+    background-color: rgb(253, 253, 54);
+    color: black;
+}
