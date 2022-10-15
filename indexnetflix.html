@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylenetflix.css">
+    <!---FOOTER FILES ADDING LINK-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Movie App</title>
+</head>
+<body>
+    <div id="starter" class="starter" style="background-image: url('bklogo.jpg');background-size: cover;">
+        <div id="col1" class="col left">
+        <h1 id="topic" class="topic">NETFLIX</a></div>
+        <div id="col2" class ="col right">
+        <form  id="form" class="formdata">
+            <input type="text" placeholder="Search" id="search" class="search">
+        </form>
+        </div>
+        
+    </div>
+    <div id="tags"></div>
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      
+        <!-- Overlay content -->
+        <div class="overlay-content" id="overlay-content"></div>
+        
+        <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8656;</a> 
+        
+        <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow" >&#8658;</a>
+
+      </div>
+    <main id="main"></main>
+    <div class="pagination">
+        <div class="page" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="page" id="next">Next Page</div>
+
+    </div>
+
+    <script src="scriptnetflix.js"></script>
+
+
+    <!--footer coding-->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/syed-mohd-askari-a0b24b176">Syed Mohd Askari</a></li>
+                        <!--<li><a href="#">Shivam Pandey</a></li>-->
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">xyz@gmail.com</a></li>
+                        <li><a href="#">+919898987469</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Refrences</h4>
+                    <ul>
+                        <li><a href="https://www.netflix.com/in/">Netflix</a></li>
+                        <li><a href="https://www.themoviedb.org/">Tmdb</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bbdnitmlko/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/BBD_NITM?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/bbd_nitm/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a href="https://in.linkedin.com/school/babu-banarasi-das-national-institute-of-technology-and-management-lucknow/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://bbdnitm.ac.in/"><i class="fas fa-university"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+ 
+</body>
+</html>
